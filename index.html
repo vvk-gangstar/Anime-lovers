@@ -1,70 +1,100 @@
-<script>
-  const imageQueries = [
-    'https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg',
-    'https://cdn2.thecatapi.com/images/MTc5ODIyMQ.jpg',
-    'https://cdn2.thecatapi.com/images/MTYxODIyMQ.jpg',
-    'https://cdn2.thecatapi.com/images/2oo.gif',
-    'https://cdn2.thecatapi.com/images/bpc.jpg',
-    'https://cdn2.thecatapi.com/images/6qi.jpg',
-    'https://cdn2.thecatapi.com/images/9ccXTANkb.jpg',
-    'https://cdn2.thecatapi.com/images/c9a.jpg',
-    'https://cdn2.thecatapi.com/images/8gk.jpg',
-    'https://cdn2.thecatapi.com/images/du.jpg'
-  ];
-
-  let lastIndex = -1; // track last shown image index
-
-  const btn = document.getElementById('saveBtn');
-  const imageWrap = document.getElementById('imageWrap');
-  const theImage = document.getElementById('theImage');
-  const spinner = document.getElementById('spinner');
-  const closeBtn = document.getElementById('closeBtn');
-
-  function showRandom() {
-    imageWrap.style.display = 'block';
-    spinner.style.display = 'block';
-    theImage.classList.remove('visible');
-
-    let newIndex;
-    do {
-      newIndex = Math.floor(Math.random() * imageQueries.length);
-    } while (newIndex === lastIndex); // ensure it's different from last time
-    lastIndex = newIndex;
-
-    const url = imageQueries[newIndex];
-
-    theImage.onload = () => {
-      spinner.style.display = 'none';
-      theImage.classList.add('visible');
-    };
-    theImage.onerror = () => {
-      spinner.style.display = 'none';
-      theImage.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(
-        `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600">
-          <rect width="100%" height="100%" fill="#ffdcec"/>
-          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#b33d73" font-family="Arial, sans-serif" font-size="24">
-            Image unavailable — showing placeholder
-          </text>
-        </svg>`
-      );
-      theImage.classList.add('visible');
-    };
-
-    theImage.src = url;
-  }
-
-  btn.addEventListener('click', showRandom);
-
-  closeBtn.addEventListener('click', () => {
-    imageWrap.style.display = 'none';
-    theImage.classList.remove('visible');
-    theImage.src = '';
-  });
-
-  btn.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') { 
-      e.preventDefault(); 
-      showRandom(); 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>save the world from chapri anime and BGMI lovers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      text-align: center;
+      padding: 20px;
     }
-  });
-</script>
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #d63384;
+      font-size: 1.8em;
+    }
+    p {
+      color: #6c757d;
+    }
+    button {
+      background: #ff4da6;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1em;
+      cursor: pointer;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      background: #ff1a8c;
+    }
+    .image-box {
+      margin-top: 20px;
+    }
+    .image-box img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+    .footer {
+      margin-top: 15px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>save the world from chapri anime and BGMI lovers</h1>
+    <p>by clicking the switch below — the world (and your heart) will thank you 💖</p>
+    <button onclick="showRandomImage()">Click to save 🌍</button>
+    <div class="image-box">
+      <img id="catImage" src="" alt="" style="display:none;">
+    </div>
+    <div class="footer">
+      Images provided by TheCatAPI — enjoy the cats! 🐱
+    </div>
+  </div>
+
+  <script>
+    const imageQueries = [
+      'https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg',
+      'https://cdn2.thecatapi.com/images/MTc5ODIyMQ.jpg',
+      'https://cdn2.thecatapi.com/images/MTYxODIyMQ.jpg',
+      'https://cdn2.thecatapi.com/images/2oo.gif',
+      'https://cdn2.thecatapi.com/images/bpc.jpg',
+      'https://cdn2.thecatapi.com/images/6qi.jpg',
+      'https://cdn2.thecatapi.com/images/9ccXTANkb.jpg',
+      'https://cdn2.thecatapi.com/images/c9a.jpg',
+      'https://cdn2.thecatapi.com/images/8gk.jpg',
+      'https://cdn2.thecatapi.com/images/du.jpg'
+    ];
+
+    let lastIndex = -1;
+
+    function showRandomImage() {
+      let randomIndex;
+      do {
+        randomIndex = Math.floor(Math.random() * imageQueries.length);
+      } while (randomIndex === lastIndex);
+
+      lastIndex = randomIndex;
+
+      const img = document.getElementById('catImage');
+      img.src = imageQueries[randomIndex];
+      img.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
