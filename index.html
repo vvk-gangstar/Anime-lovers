@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save this world from chapris</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #ffe6f2, #ffb3d9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .container {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+    text-align: center;
+  }
+  h1 {
+    color: #d63384;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  p {
+    color: #ad4d7d;
+    margin-bottom: 20px;
+  }
+  button {
+    background: linear-gradient(90deg, #ff4da6, #ff80bf);
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
+    transition: transform 0.2s ease;
+  }
+  button:hover {
+    transform: scale(1.05);
+  }
+  .image-box {
+    margin-top: 20px;
+    display: none;
+  }
+  .image-box img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+  }
+  .hearts {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 2rem;
+    animation: float 3s infinite ease-in-out;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Save this world from chapris</h1>
+  <p>by clicking the switch below — the world (and your heart) will thank you 💖</p>
+  <button onclick="showRandomImage()">Click to save 🌍</button>
+  <div class="image-box" id="imageBox">
+    <img id="randomImage" src="" alt="Random image">
+  </div>
+  <p style="font-size: 0.8rem; color: #b5658f; margin-top: 15px;">
+    Images may be from stock sources — respectful content only.
+  </p>
+</div>
+
+<div class="hearts">💗</div>
+
+<script>
+  const images = [
+    "https://upload.wikimedia.org/wikipedia/commons/3/3a/LGBT_kiss.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/1/1b/Gay_couple_kiss.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/f/f4/LGBT_Couple.jpg"
+  ];
+
+  function showRandomImage() {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const img = document.getElementById("randomImage");
+    img.src = images[randomIndex];
+    document.getElementById("imageBox").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
