@@ -1,198 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>save the world from chapri anime and BGMI lovers</title>
-<style>
-  :root{
-    --pink-1: #ffe9f2;
-    --pink-2: #ffd0e6;
-    --accent-a: #ff4da6;
-    --accent-b: #ff80bf;
-    --muted: #b5658f;
-  }
-
-  html,body{
-    height:100%;
-    margin:0;
-    font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    background: linear-gradient(135deg, #fff0f6 0%, #ffd8ec 45%, #ffc2e0 100%);
-    color:#42243d;
-  }
-
-  .page {
-    min-height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:28px;
-    box-sizing:border-box;
-  }
-
-  .card {
-    width:100%;
-    max-width:760px;
-    background: rgba(255,255,255,0.62);
-    backdrop-filter: blur(10px) saturate(120%);
-    border-radius:18px;
-    padding:34px;
-    box-shadow: 0 20px 40px rgba(218, 85, 150, 0.12), 0 6px 18px rgba(218,85,150,0.06);
-    text-align:center;
-    border: 1px solid rgba(255,255,255,0.6);
-  }
-
-  h1 {
-    margin:0 0 10px 0;
-    font-size:1.6rem;
-    color: #d12c77;
-    line-height:1.12;
-    font-weight:800;
-  }
-
-  .subtitle {
-    margin:6px 0 22px 0;
-    color: var(--muted);
-    font-size:0.98rem;
-  }
-
-  .btn {
-    display:inline-block;
-    background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
-    color:white;
-    border:none;
-    padding:14px 34px;
-    border-radius:999px;
-    font-weight:700;
-    font-size:1rem;
-    cursor:pointer;
-    box-shadow: 0 8px 22px rgba(255,77,166,0.18);
-    transition: transform .14s ease, box-shadow .14s ease;
-  }
-  .btn:active { transform: translateY(1px) scale(.995); }
-  .btn:hover { box-shadow: 0 12px 28px rgba(255,77,166,0.22); }
-
-  /* image area */
-  .image-wrap {
-    margin-top:22px;
-    display:none;
-    align-items:center;
-    justify-content:center;
-  }
-  .image-card {
-    position:relative;
-    width:100%;
-    max-width:680px;
-    border-radius:14px;
-    overflow:hidden;
-    box-shadow: 0 12px 30px rgba(218,85,150,0.12);
-    background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.72));
-  }
-
-  .image-card img {
-    width:100%;
-    height:auto;
-    display:block;
-    opacity:0;
-    transition: opacity .45s ease;
-  }
-  .image-card img.visible { opacity:1; }
-
-  .spinner {
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    border:4px solid rgba(255,255,255,0.8);
-    border-top-color: rgba(218,85,150,0.9);
-    animation: spin 0.9s linear infinite;
-    box-shadow: 0 8px 20px rgba(218,85,150,0.08);
-  }
-  @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
-
-  .close-btn {
-    position:absolute;
-    top:12px;
-    right:12px;
-    background:rgba(255,255,255,0.9);
-    border-radius:8px;
-    border:none;
-    padding:6px 8px;
-    cursor:pointer;
-    font-weight:700;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  }
-
-  .tip {
-    margin-top:12px;
-    color:var(--muted);
-    font-size:0.85rem;
-  }
-
-  /* floating heart */
-  .heart {
-    position:fixed;
-    left:18px;
-    bottom:18px;
-    font-size:28px;
-    filter:drop-shadow(0 6px 18px rgba(255,77,166,0.18));
-    animation: bob 3s infinite ease-in-out;
-    z-index:40;
-  }
-  @keyframes bob { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-8px);} }
-
-  footer {
-    margin-top:18px;
-    color: #b6769a;
-    font-size:0.82rem;
-  }
-
-  /* responsive */
-  @media (max-width:520px){
-    .card { padding:22px; border-radius:14px;}
-    h1 { font-size:1.25rem; }
-    .btn { padding:12px 22px; font-size:.95rem; }
-    .heart { left:12px; bottom:12px; font-size:22px; }
-  }
-</style>
-</head>
-<body>
-  <div class="page">
-    <div class="card" role="main" aria-labelledby="main-title">
-      <h1 id="main-title">save the world from chapri anime and BGMI lovers</h1>
-      <div class="subtitle">by clicking the switch below — the world (and your heart) will thank you 💖</div>
-
-      <button class="btn" id="saveBtn" aria-label="Click to save">Click to save 🌍</button>
-
-      <div class="image-wrap" id="imageWrap">
-        <div class="image-card" id="imageCard" aria-live="polite">
-          <div class="spinner" id="spinner" style="display:none" aria-hidden="true"></div>
-          <button class="close-btn" id="closeBtn" title="Close image">✕</button>
-          <img id="theImage" alt="Funny cat">
-        </div>
-
-        <div class="tip">Tip: click again to show another image.</div>
-      </div>
-
-      <footer>Images provided by Unsplash / safe search. Enjoy the cats! 😺</footer>
-    </div>
-
-    <div class="heart" aria-hidden="true">💗</div>
-  </div>
-
 <script>
-  // Cat queries on source.unsplash.com (no API key). Fresh image each request.
   const imageQueries = [
-    'https://source.unsplash.com/1100x700/?funny-cat',
-    'https://source.unsplash.com/1100x700/?cute-cat',
-    'https://source.unsplash.com/1100x700/?kitten,playful',
-    'https://source.unsplash.com/1100x700/?cat,funny'
+    'https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg',
+    'https://cdn2.thecatapi.com/images/MTc5ODIyMQ.jpg',
+    'https://cdn2.thecatapi.com/images/MTYxODIyMQ.jpg',
+    'https://cdn2.thecatapi.com/images/2oo.gif',
+    'https://cdn2.thecatapi.com/images/bpc.jpg',
+    'https://cdn2.thecatapi.com/images/6qi.jpg',
+    'https://cdn2.thecatapi.com/images/9ccXTANkb.jpg',
+    'https://cdn2.thecatapi.com/images/c9a.jpg',
+    'https://cdn2.thecatapi.com/images/8gk.jpg',
+    'https://cdn2.thecatapi.com/images/du.jpg'
   ];
+
+  let lastIndex = -1; // track last shown image index
 
   const btn = document.getElementById('saveBtn');
   const imageWrap = document.getElementById('imageWrap');
@@ -205,9 +25,13 @@
     spinner.style.display = 'block';
     theImage.classList.remove('visible');
 
-    const pick = imageQueries[Math.floor(Math.random() * imageQueries.length)];
-    // add timestamp to avoid caching same redirect
-    const url = pick + '&_=' + Date.now();
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * imageQueries.length);
+    } while (newIndex === lastIndex); // ensure it's different from last time
+    lastIndex = newIndex;
+
+    const url = imageQueries[newIndex];
 
     theImage.onload = () => {
       spinner.style.display = 'none';
@@ -237,10 +61,10 @@
     theImage.src = '';
   });
 
-  // keyboard accessibility
   btn.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showRandom(); }
+    if (e.key === 'Enter' || e.key === ' ') { 
+      e.preventDefault(); 
+      showRandom(); 
+    }
   });
 </script>
-</body>
-</html>
