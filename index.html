@@ -1,107 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>save the world from chapri anime and BGMI lovers</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: linear-gradient(135deg, #ffe6f2, #ffb3d9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 10px;
-  }
-  .container {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 30px;
-    max-width: 500px;
-    width: 100%;
-    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
-    text-align: center;
-  }
-  h1 {
-    color: #d63384;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  p {
-    color: #ad4d7d;
-    margin-bottom: 20px;
-  }
-  button {
-    background: linear-gradient(90deg, #ff4da6, #ff80bf);
-    border: none;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
-    transition: transform 0.2s ease;
-  }
-  button:hover {
-    transform: scale(1.05);
-  }
-  .image-box {
-    margin-top: 20px;
-    display: none;
-  }
-  .image-box img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
-    height: auto;
-  }
-  .hearts {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    font-size: 2rem;
-    animation: float 3s infinite ease-in-out;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the world from chapri anime and BGMI lovers</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            color: white;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            font-size: 1.8em;
+            font-weight: bold;
+            background: rgba(0,0,0,0.6);
+        }
+        main {
+            padding: 20px;
+        }
+        img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .btn {
+            background: #ff4c4c;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #e63939;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #aaa;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-
-<div class="container">
-  <h1>save the world from chapri anime and BGMI lovers</h1>
-  <p>by clicking the switch below — the world (and your heart) will thank you 💖</p>
-  <button onclick="showRandomImage()">Click to save 🌍</button>
-  <div class="image-box" id="imageBox">
-    <img id="randomImage" src="" alt="Random image">
-  </div>
-  <p style="font-size: 0.8rem; color: #b5658f; margin-top: 15px;">
-    Images may be from stock sources — respectful content only.
-  </p>
-</div>
-
-<div class="hearts">💗</div>
-
-<script>
-  const images = [
-    "https://i.imgur.com/u2eN8oO.jpg",
-    "https://i.imgur.com/HpF1tvD.jpg",
-    "https://i.imgur.com/1dVbNtw.jpg"
-  ];
-
-  function showRandomImage() {
-    const randomIndex = Math.floor(Math.random() * images.length);
-    const img = document.getElementById("randomImage");
-    img.src = images[randomIndex];
-    document.getElementById("imageBox").style.display = "block";
-  }
-</script>
-
+    <header>Save the world from chapri anime and BGMI lovers</header>
+    <main>
+        <p>Join the movement to protect the internet from cringe content.</p>
+        <img src="https://images.unsplash.com/photo-1601784551446-20c4d8c92df9?auto=format&fit=crop&w=1000&q=80" alt="Two men together">
+        <br>
+        <button class="btn">Join Us</button>
+    </main>
+    <footer>
+        &copy; 2025 Save the World Campaign
+    </footer>
 </body>
 </html>
